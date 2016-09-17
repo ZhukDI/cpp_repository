@@ -1,0 +1,32 @@
+Жук Д.И.
+Android Programmer
+2016
+1000
+Петров Е.О.
+PHP-programmer
+2016
+800
+Сидоров В.Г.
+Android Programmer
+2010
+2000
+Севрук А.Г.
+Senior C++ Developer
+2000
+1500
+Кудров О.в.
+Senior C++ Developer
+2013
+900
+Гусинов Р.С.
+Java Web Developer
+2016
+950
+Нестеров Е.и.
+Web developer
+1970
+800
+Евсей И.С.
+Дизайнер
+2015
+1000
