@@ -1,13 +1,13 @@
-/*
-**	Построить класс для работы с односвязным списком. Элемент списка – действительное число.
-**	Сформировать список, содержащий неубывающую последовательность чисел,
-**	и преобразовать его так,чтобы последовательность была невозрастающей.
-**	Для этого необходимо совершить переворот списка, т. е. такую переустановку указателей в списке,
-**	при которой элементы его следуют друг за другом в обратном порядке.
+п»ї/*
+**	РџРѕСЃС‚СЂРѕРёС‚СЊ РєР»Р°СЃСЃ РґР»СЏ СЂР°Р±РѕС‚С‹ СЃ РѕРґРЅРѕСЃРІСЏР·РЅС‹Рј СЃРїРёСЃРєРѕРј. Р­Р»РµРјРµРЅС‚ СЃРїРёСЃРєР° вЂ“ РґРµР№СЃС‚РІРёС‚РµР»СЊРЅРѕРµ С‡РёСЃР»Рѕ.
+**	РЎС„РѕСЂРјРёСЂРѕРІР°С‚СЊ СЃРїРёСЃРѕРє, СЃРѕРґРµСЂР¶Р°С‰РёР№ РЅРµСѓР±С‹РІР°СЋС‰СѓСЋ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ С‡РёСЃРµР»,
+**	Рё РїСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РµРіРѕ С‚Р°Рє,С‡С‚РѕР±С‹ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ Р±С‹Р»Р° РЅРµРІРѕР·СЂР°СЃС‚Р°СЋС‰РµР№.
+**	Р”Р»СЏ СЌС‚РѕРіРѕ РЅРµРѕР±С…РѕРґРёРјРѕ СЃРѕРІРµСЂС€РёС‚СЊ РїРµСЂРµРІРѕСЂРѕС‚ СЃРїРёСЃРєР°, С‚. Рµ. С‚Р°РєСѓСЋ РїРµСЂРµСѓСЃС‚Р°РЅРѕРІРєСѓ СѓРєР°Р·Р°С‚РµР»РµР№ РІ СЃРїРёСЃРєРµ,
+**	РїСЂРё РєРѕС‚РѕСЂРѕР№ СЌР»РµРјРµРЅС‚С‹ РµРіРѕ СЃР»РµРґСѓСЋС‚ РґСЂСѓРі Р·Р° РґСЂСѓРіРѕРј РІ РѕР±СЂР°С‚РЅРѕРј РїРѕСЂСЏРґРєРµ.
 */
 #include <iostream>
 #include <clocale>
-#include <Windows.h>//для русского вывода char-ов
+#include <Windows.h>//РґР»СЏ СЂСѓСЃСЃРєРѕРіРѕ РІС‹РІРѕРґР° char-РѕРІ
 
 using namespace std;
 
@@ -56,7 +56,7 @@ bool List::isEmpty(){
 void List::removeByIndex(int index){
 	listElement *temp;
 	if ((index < 1) || (index > listSize)){
-		cout << "Неверный индекс!\n";
+		cout << "РќРµРІРµСЂРЅС‹Р№ РёРЅРґРµРєСЃ!\n";
 	}
 	else{
 		listSize--;
@@ -91,7 +91,7 @@ listElement *List::findByIndex(int index){
 void List::addInBegining(double element){
 	if (listSize != 0){
 		while (element > Head->element){
-			cout << "Введите элемент который не больше чем ";
+			cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РєРѕС‚РѕСЂС‹Р№ РЅРµ Р±РѕР»СЊС€Рµ С‡РµРј ";
 			cout << Head->element << ": " << endl;
 			cin >> element;
 		}
@@ -106,7 +106,7 @@ void List::addInBegining(double element){
 void List::addInEnd(double element){
 	if (listSize != 0){
 		while (element < findByIndex(listSize)->element){
-			cout << "Введите элемент который не меньше чем ";
+			cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РєРѕС‚РѕСЂС‹Р№ РЅРµ РјРµРЅСЊС€Рµ С‡РµРј ";
 			cout << findByIndex(listSize)->element << ": " << endl;
 			cin >> element;
 		}
@@ -129,29 +129,29 @@ void List::addInPosition(int index, double element){
 	if (listSize != 0){
 		if (index == 0){
 			while (element > Head->element){
-				cout << "Введите элемент который не больше чем ";
+				cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РєРѕС‚РѕСЂС‹Р№ РЅРµ Р±РѕР»СЊС€Рµ С‡РµРј ";
 				cout << Head->element << ": " << endl;
 				cin >> element;
 			}
 		}
 		if (index == listSize + 1){
 			while (element < findByIndex(listSize)->element){
-				cout << "Введите элемент который не меньше чем ";
+				cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РєРѕС‚РѕСЂС‹Р№ РЅРµ РјРµРЅСЊС€Рµ С‡РµРј ";
 				cout << findByIndex(listSize)->element << ": " << endl;
 				cin >> element;
 			}
 		}
 		else{
 			while (!(element <= findByIndex(index)->element && element >= findByIndex(index - 1)->element)){
-				cout << "Введите элемент который не меньше " << findByIndex(index - 1)->element 
-					<< " и не больше " << findByIndex(index)->element<<" ";
+				cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚ РєРѕС‚РѕСЂС‹Р№ РЅРµ РјРµРЅСЊС€Рµ " << findByIndex(index - 1)->element 
+					<< " Рё РЅРµ Р±РѕР»СЊС€Рµ " << findByIndex(index)->element<<" ";
 				cin >> element;
 			}
 		}
 	}
 	int newLength = listSize + 1;
 	if ((index < 1) || (index > newLength)){
-		cout << "Неверный индекс!\n";
+		cout << "РќРµРІРµСЂРЅС‹Р№ РёРЅРґРµРєСЃ!\n";
 	}
 	else{
 		listElement *newElement = new listElement;
@@ -183,10 +183,10 @@ void List::reverseList(){
 
 void List::showList(){
 	if (!listSize){
-		cout << "Список пуст\n";
+		cout << "РЎРїРёСЃРѕРє РїСѓСЃС‚\n";
 	}
 	else{
-		cout << "Элементы списка:\n";
+		cout << "Р­Р»РµРјРµРЅС‚С‹ СЃРїРёСЃРєР°:\n";
 		listElement *head = Head;
 		while (head != NULL){
 			cout << head->element << " ";
@@ -198,43 +198,43 @@ void List::showList(){
 
 int main()
 {
-	SetConsoleCP(1251);//для русского вывода char-ов
+	SetConsoleCP(1251);//РґР»СЏ СЂСѓСЃСЃРєРѕРіРѕ РІС‹РІРѕРґР° char-РѕРІ
 	SetConsoleOutputCP(1251);
 	setlocale(LC_ALL, "rus");
 
-	cout << "Привет мир!" << endl;
+	cout << "РџСЂРёРІРµС‚ РјРёСЂ!" << endl;
 	int index;
 	double element;
 	List l1;
 
 	int pick;
 	do{
-		cout << "1. Добавить элемент в начало\n";
-		cout << "2. Добавить элемент в конец\n";
-		cout << "3. Добавить элемент на заданную позицию\n";
-		cout << "4. Вывести список\n";
-		cout << "5. Удалить элемент с заданной позиции\n";
-		cout << "6. Преобразовать в невозрастающую последовательность\n";
-		cout << "0. Выход\n";
+		cout << "1. Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РЅР°С‡Р°Р»Рѕ\n";
+		cout << "2. Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РІ РєРѕРЅРµС†\n";
+		cout << "3. Р”РѕР±Р°РІРёС‚СЊ СЌР»РµРјРµРЅС‚ РЅР° Р·Р°РґР°РЅРЅСѓСЋ РїРѕР·РёС†РёСЋ\n";
+		cout << "4. Р’С‹РІРµСЃС‚Рё СЃРїРёСЃРѕРє\n";
+		cout << "5. РЈРґР°Р»РёС‚СЊ СЌР»РµРјРµРЅС‚ СЃ Р·Р°РґР°РЅРЅРѕР№ РїРѕР·РёС†РёРё\n";
+		cout << "6. РџСЂРµРѕР±СЂР°Р·РѕРІР°С‚СЊ РІ РЅРµРІРѕР·СЂР°СЃС‚Р°СЋС‰СѓСЋ РїРѕСЃР»РµРґРѕРІР°С‚РµР»СЊРЅРѕСЃС‚СЊ\n";
+		cout << "0. Р’С‹С…РѕРґ\n";
 		cin >> pick;
 		switch (pick){
 		case 0: {return 1; }
 		case 1: {
-					cout << "Введите элемент: ";
+					cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚: ";
 					cin >> element;
 					l1.addInBegining(element);
 					break;
 		}
 		case 2: {
-					cout << "Введите элемент: ";
+					cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚: ";
 					cin >> element;
 					l1.addInEnd(element);
 					break;
 		}
 		case 3: {
-					cout << "Введите позицию:\n";
+					cout << "Р’РІРµРґРёС‚Рµ РїРѕР·РёС†РёСЋ:\n";
 					cin >> index;
-					cout << "Введите элемент:\n";
+					cout << "Р’РІРµРґРёС‚Рµ СЌР»РµРјРµРЅС‚:\n";
 					cin >> element;
 					l1.addInPosition(index, element);
 					l1.showList();
@@ -245,19 +245,19 @@ int main()
 					break;
 		}
 		case 5: {
-					cout << "Введите позицию: ";
+					cout << "Р’РІРµРґРёС‚Рµ РїРѕР·РёС†РёСЋ: ";
 					cin >> index;
 					l1.removeByIndex(index);
 					l1.showList();
 					break;
 		}
 		case 6: {
-					cout << "Преобразованный список: ";
+					cout << "РџСЂРµРѕР±СЂР°Р·РѕРІР°РЅРЅС‹Р№ СЃРїРёСЃРѕРє: ";
 					l1.reverseList();
 					l1.showList();
 					break;
 		}
-		default: {cout << "Ошибка! Попробуйте снова\n"; break; }
+		default: {cout << "РћС€РёР±РєР°! РџРѕРїСЂРѕР±СѓР№С‚Рµ СЃРЅРѕРІР°\n"; break; }
 		}
 	} while (pick != 0);
 
